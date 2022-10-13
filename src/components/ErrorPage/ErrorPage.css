@@ -1,0 +1,39 @@
+.ErrorPage {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.ErrorPage > div {
+  margin-bottom: 12px;
+}
+
+.ErrorPage__img {
+  width: 56px;
+  height: 56px;
+}
+
+.ErrorPage__again {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #6534FF;
+  cursor: pointer;
+}
+
+.ErrorPage__subtitle {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #97979B;
+}
+
+.ErrorPage__title {
+  font-weight: 600;
+font-size: 17px;
+line-height: 22px;
+color: #050510;
+}

@@ -1,4 +1,10 @@
+.MainPage__ContentPart {
+  min-height: calc(100vh - 300px);
+}
 
 
 
 
+.MainPage {
+  height: 100vh;
+}

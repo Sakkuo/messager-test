@@ -1,17 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Search.css";
 import SearchIcon from "../../img/SearchIcon.png";
 import SearchFilterIcon from "../../img/SearchFilterIcon.png";
-import { Button } from "@mui/material";
+import changedModalFilter from "../../img/changedModalFilter.png";
 import { filterSlice } from "../../store/reducers/FilterSlice";
 import ModalWindow from "../Modal/ModalWindow";
-import { useAppDispatch } from "../../hooks/redux";
+import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 
 const Search: React.FC = () => {
+  const { filterModalValue } = useAppSelector((state) => state.filterReducer);
+  const { setModalState, changeSearchContent } = filterSlice.actions;
+  const dispatch = useAppDispatch();
+  const [searchName, setSearchName] = useState("");
+  const [searchNameTimeOut, setSearchNameTimeOut] = useState("");
 
+  useEffect(() => {
+    setTimeout(() => {
+      setSearchNameTimeOut(searchName);
+    }, 700);
+  }, [searchName]);
 
-  const {setModalState} = filterSlice.actions
-  const dispatch = useAppDispatch()
+  useEffect(() => {
+    if (searchNameTimeOut === searchName) {
+      dispatch(changeSearchContent(searchNameTimeOut));
+    }
+  }, [searchName, searchNameTimeOut]);
 
   return (
     <div className="Search">
@@ -22,10 +35,19 @@ const Search: React.FC = () => {
         className="Search__field"
         type="search"
         placeholder="Введи имя, тег, почту..."
+        onChange={(e) => setSearchName(e.target.value)}
       />
       <div className="Search__SearchFilterIcon">
-        <button className='SearchFilterIcon__button' onClick={() => dispatch(setModalState(true))}>
-          <img src={SearchFilterIcon} alt="Filter" />
+        <button
+          className="SearchFilterIcon__button"
+          onClick={() => dispatch(setModalState(true))}
+        >
+          <img
+            src={
+              filterModalValue === "alphabet" ? SearchFilterIcon : changedModalFilter
+            }
+            alt="Filter"
+          />
         </button>
       </div>
       <ModalWindow />

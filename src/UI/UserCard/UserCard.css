@@ -1,5 +1,13 @@
 .UserCard {
   margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.UserCard__profile {
+  display: flex;
+  flex-direction: row;
 }
 
 .UserCard__photo {
@@ -17,11 +25,6 @@
   display: flex;
   align-items: center;
   margin-left: 16px;
-}
-
-.UserCard {
-  display: flex;
-  flex-direction: row;
 }
 
 .info__nameInfo {
@@ -48,4 +51,13 @@
   font-size: 13px;
   color: #55555C;
   line-height: 16px;
+}
+
+.UserCard__birthday {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  color: #55555C;
+  display: flex;
+  align-items: center;
 }

@@ -6,7 +6,9 @@ interface FilterState {
   workers: IWorker[];
   filterValue: string,
   isModalOpen: boolean,
-  filterModalValue: string
+  filterModalValue: string,
+  error: string,
+  searchContent: string
 }
 
 const initialState: FilterState = {
@@ -14,7 +16,9 @@ const initialState: FilterState = {
   workers: [],
   filterValue: '1',
   isModalOpen: false,
-  filterModalValue: 'alphabet'
+  filterModalValue: 'alphabet',
+  error: '',
+  searchContent: ''
 }
 
 export const filterSlice = createSlice({
@@ -35,6 +39,12 @@ export const filterSlice = createSlice({
     },
     changeFilterModalValue(state, action: PayloadAction<string>) {
       state.filterModalValue = action.payload
+    },
+    changeErrorState(state, action: PayloadAction<string>) {
+      state.error = action.payload
+    },
+    changeSearchContent(state, action: PayloadAction<string>) {
+      state.searchContent = action.payload
     },
   }
 })

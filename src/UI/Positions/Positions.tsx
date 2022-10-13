@@ -15,10 +15,10 @@ const Positions = () => {
   const {
     data: workers,
     isLoading,
-    error,
+    error
   } = dataAPI.useFetchAllDataQuery(filterParams);
   const dispatch = useAppDispatch()
-  const {changeFilter, changeFilteredWorkers, changeFilterValue} = filterSlice.actions
+  const {changeFilter, changeFilteredWorkers, changeFilterValue, changeErrorState} = filterSlice.actions
 
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     dispatch(changeFilterValue(newValue));
@@ -29,6 +29,13 @@ const Positions = () => {
       dispatch(changeFilteredWorkers(workers.items))
     }
   }, [workers])
+
+  React.useEffect(() => {
+    if (error) {
+      dispatch(changeErrorState(`${error}`))
+      console.log(error)
+    }
+  }, [error])
 
   return (
     <div className="Positions">

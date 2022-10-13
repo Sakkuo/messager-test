@@ -28,7 +28,6 @@ const ModalWindow: React.FC = () => {
 
   const dispatch = useAppDispatch();
 
-  console.log(isModalOpen);
 
   return (
     <div className="Modal">
