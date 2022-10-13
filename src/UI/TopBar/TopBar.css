@@ -11,3 +11,10 @@
   padding: 16px 16px 0px 16px;
   box-sizing: border-box;
 }
+
+
+@media (max-width: 400px) {
+  .TopBar {
+    width: 90%;
+  }
+}

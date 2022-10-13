@@ -11,3 +11,7 @@
   line-height: 20px;
   color: #C3C3C6;
 }
+
+.lines {
+  max-width: 40%;
+}

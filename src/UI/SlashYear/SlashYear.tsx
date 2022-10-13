@@ -7,9 +7,9 @@ const SlashYear = () => {
   const nextYear = (nowDate.getFullYear() + 1)
   return (
     <div className='SlashYear'>
-      <img src={line} alt=''/>
+      <img src={line} className='lines' alt=''/>
       <div className='SlashYear__year'>{nextYear}</div>
-      <img src={line} alt=''/>
+      <img src={line} className='lines' alt=''/>
     </div>
   )
 }

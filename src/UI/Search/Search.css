@@ -16,6 +16,13 @@
   width: 95%;
 }
 
+@media (max-width: 400px) {
+  .Search__field {
+    margin: 10px 6px 10px 40px;
+    width: 80%;
+  }
+}
+
 .Search__field:focus {
   outline: none;
 }

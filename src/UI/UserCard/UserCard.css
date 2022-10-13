@@ -8,6 +8,7 @@
 .UserCard__profile {
   display: flex;
   flex-direction: row;
+  cursor: pointer;
 }
 
 .UserCard__photo {

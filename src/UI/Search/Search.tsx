@@ -6,6 +6,7 @@ import changedModalFilter from "../../img/changedModalFilter.png";
 import { filterSlice } from "../../store/reducers/FilterSlice";
 import ModalWindow from "../Modal/ModalWindow";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
+import SelectedPage from '../../img/SelectedPage.png'
 
 const Search: React.FC = () => {
   const { filterModalValue } = useAppSelector((state) => state.filterReducer);
@@ -13,6 +14,7 @@ const Search: React.FC = () => {
   const dispatch = useAppDispatch();
   const [searchName, setSearchName] = useState("");
   const [searchNameTimeOut, setSearchNameTimeOut] = useState("");
+  const [isSearchSelected, setIsSearchSelected] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
@@ -29,7 +31,7 @@ const Search: React.FC = () => {
   return (
     <div className="Search">
       <div className="Search__SearchIcon">
-        <img src={SearchIcon} alt="Search" />
+        <img src={isSearchSelected ? SelectedPage : SearchIcon} alt="Search" />
       </div>
       <input
         className="Search__field"

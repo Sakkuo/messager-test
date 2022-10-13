@@ -8,11 +8,13 @@ import UserCard from "../../UI/UserCard/UserCard";
 import "./WorkersField.css";
 import SlashYear from "../../UI/SlashYear/SlashYear";
 import CantFind from "../CantFind/CantFind";
+import { useNavigate } from "react-router-dom";
 
 const WorkersField: React.FC = () => {
   const { workers, filterValue, filterModalValue, searchContent } = useAppSelector(
     (state) => state.filterReducer
   );
+  const navigate = useNavigate();
   let filteredArray: any = [];
 
   const nowDate = new Date();
@@ -60,21 +62,24 @@ const WorkersField: React.FC = () => {
     );
   });
 
-  // const filterBySearch = filteredArray?.filter((profile: { fitstName: string }) => {
-  //   return profile.fitstName.toLowerCase().includes(searchContent.toLowerCase());
-  // });
-
   const workersProfilesDefault = filterBySearchDefault?.map(
-    (worker: IWorker, i: number) => <UserCard worker={worker} key={i} />
+    (worker: IWorker, i: number) => (
+      <UserCard
+        onClick={() => navigate("/user/" + worker.id)}
+        worker={worker}
+        key={i}
+      />
+    )
   );
-  const workersProfilesBirthday = filterBySearchBirthday?.map((worker: IWorker, i: number) => (
-    <UserCard worker={worker} key={i} />
-  ));
-
-  console.log((workersProfilesDefault.length || workersProfilesBirthday.length) && !!searchContent)
-
-  // console.log( !!workersProfilesBirthday )
-  console.log(!!searchContent)
+  const workersProfilesBirthday = filterBySearchBirthday?.map(
+    (worker: IWorker, i: number) => (
+      <UserCard
+        onClick={() => navigate("/user/" + worker.id)}
+        worker={worker}
+        key={i}
+      />
+    )
+  );
 
   const renderFilter = () => {
     const filtersValue = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13].map((i) => (
@@ -84,7 +89,11 @@ const WorkersField: React.FC = () => {
 
           {filterModalValue === "birthday" ? <SlashYear /> : null}
           {filterModalValue === "birthday" ? workersProfilesBirthday : null}
-          {!(workersProfilesDefault.length || workersProfilesBirthday.length) ? !!searchContent ?  <CantFind/> : null : null}
+          {!(workersProfilesDefault.length || workersProfilesBirthday.length) ? (
+            !!searchContent ? (
+              <CantFind />
+            ) : null
+          ) : null}
         </div>
       </TabPanel>
     ));

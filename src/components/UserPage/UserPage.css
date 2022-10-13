@@ -1,0 +1,110 @@
+.UserPage__profile {
+  background: #F7F7F8;
+  height: calc(100vh / 10 * 4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.profile__img {
+  height: 104px;
+  width: 104px;
+  border-radius: 50%;
+  margin-bottom: 24px;
+}
+
+.profile__nameAndTag {
+  display: flex;
+  margin-bottom: 12px;
+  align-items: center;
+}
+
+.profile__tag {
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 22px;
+  color: #97979B;
+  padding-left: 4px;
+}
+
+.profile__name {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  color: #050510;
+}
+
+.profile__position {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  color: #55555C;
+}
+
+.data__telephone a {
+  outline: none;
+  text-decoration: none;
+  color: #050510;
+}
+
+.data__telephone {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #050510;
+  display: flex;
+  align-items: center;
+}
+
+.UserPage__data {
+  padding: 27px 20px;
+}
+
+.telephone__icon {
+  padding-right: 14px;
+}
+
+.data__birthdayAndIcon {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #050510;
+}
+
+.data__icon {
+  padding-right: 14px;
+}
+
+.data__years {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 50px;
+}
+
+.data__yearsNow {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #97979B;
+}
+
+.UserPage__back {
+  position: fixed;
+  top: 29px;
+  left: 33px;
+  cursor: pointer;
+}
+
+@media (max-width: 400px) {
+  .profile__img {
+    height: 80px;
+    width: 80px;
+    margin-bottom: 12px;
+  }
+  .profile__nameAndTag {
+    margin-bottom: 8px;
+  }
+}
