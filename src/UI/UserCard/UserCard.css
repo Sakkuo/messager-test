@@ -1,0 +1,51 @@
+.UserCard {
+  margin-bottom: 12px;
+}
+
+.UserCard__photo {
+  width: 70px;
+  height: 70px;
+}
+
+.UserCard__photo img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+.UserCard__info {
+  display: flex;
+  align-items: center;
+  margin-left: 16px;
+}
+
+.UserCard {
+  display: flex;
+  flex-direction: row;
+}
+
+.info__nameInfo {
+  font-weight: 500;
+  display: flex;
+  flex-direction: row;
+}
+
+.nameInfo__initials {
+  color: #97979B;
+  font-size: 14px;
+  line-height: 18px;
+  margin-left: 4px;
+}
+
+.nameInfo__name {
+  font-size: 16px;
+  line-height: 20px;
+  color: #050510;
+}
+
+.info__position {
+  font-weight: 400;
+  font-size: 13px;
+  color: #55555C;
+  line-height: 16px;
+}

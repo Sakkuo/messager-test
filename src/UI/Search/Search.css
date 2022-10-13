@@ -1,0 +1,48 @@
+.Search {
+  background: #F7F7F8;
+  border-radius: 16px;
+  margin-bottom: 22px;
+}
+
+.Search__field {
+  border: none;
+  background: inherit;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+  margin: 10px 12px 10px 44px;
+  width: 95%;
+}
+
+.Search__field:focus {
+  outline: none;
+}
+
+.Search__field::placeholder {
+  color: #C3C3C6;
+}
+
+.Search__SearchIcon {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 72px;
+  left: 30px;
+}
+
+.Search__SearchFilterIcon {
+  position: absolute;
+  top: 72px;
+  right: 30px;
+}
+
+.SearchFilterIcon__button {
+  background: none;
+  border: none;
+}
+
+.SearchFilterIcon__button:hover {
+  cursor: pointer;
+}

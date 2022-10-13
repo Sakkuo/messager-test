@@ -1,0 +1,15 @@
+.css-hyw0ab-MuiButtonBase-root-MuiTab-root {
+  text-transform: none !important;
+  padding: 8px !important;
+  font-weight: 500 !important;
+  min-width: 50px !important;
+}
+
+.css-hyw0ab-MuiButtonBase-root-MuiTab-root.Mui-selected {
+  font-weight: 600 !important;
+}
+
+
+.css-13xfq8m-MuiTabPanel-root {
+  padding: 12px 0 0 0  !important;
+}

@@ -1,0 +1,44 @@
+.Modal__title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+
+
+}
+
+.Modal__variants>div {
+  padding-top: 35px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.Modal__Button {
+  position: absolute;
+  top: 32px;
+  right: 30px;
+  background: none;
+  border: none;
+
+}
+
+.Modal__Button:hover {
+  cursor: pointer;
+}
+
+.circle-select {
+  background: none;
+  border: none;
+  padding-right: 14px;
+  vertical-align: middle;
+}
+
+.circle-select:hover {
+  cursor: pointer;
+}
+
+.circle-select > img {
+  height: 20px;
+  width: 20px;
+}
