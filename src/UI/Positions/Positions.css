@@ -13,3 +13,24 @@
 .css-13xfq8m-MuiTabPanel-root {
   padding: 12px 0 0 0  !important;
 }
+
+.MuiTabs-flexContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.MuiTabs-flexContainer::-webkit-scrollbar{
+  display: none;
+}
+
+.MuiTab-root {
+  flex: 0 0 auto;
+}
+
+
+@media (max-width: 1000px) {
+  .MuiTabs-indicator {
+    display: none;
+  }
+}

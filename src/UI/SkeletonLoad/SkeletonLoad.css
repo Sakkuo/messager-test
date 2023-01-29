@@ -1,0 +1,21 @@
+.SkeletonLoad__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 16px;
+}
+
+.SkeletonLoad__text > span {
+  margin-bottom: 6px;
+}
+
+.SkeletonLoad__block {
+  display: flex;
+  flex-direction: row;
+  margin-top: 12px !important;
+}
+
+.Skeleton {
+  overflow: hidden;
+  max-height: 70vh;
+}

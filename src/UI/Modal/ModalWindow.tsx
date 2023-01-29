@@ -28,7 +28,6 @@ const ModalWindow: React.FC = () => {
 
   const dispatch = useAppDispatch();
 
-
   return (
     <div className="Modal">
       <Modal open={isModalOpen} onClose={() => dispatch(setModalState(false))}>
@@ -41,7 +40,7 @@ const ModalWindow: React.FC = () => {
           </button>
           <div className="Modal__title">Сортировка</div>
           <div className="Modal__variants">
-            <div className="variants__alphabet">
+            <div className="variants__alphabet variant-solo">
               <button
                 onClick={() => {
                   dispatch(changeFilterModalValue("alphabet"));
@@ -52,11 +51,12 @@ const ModalWindow: React.FC = () => {
                 <img
                   src={filterModalValue === "alphabet" ? SelectedCircle : Circle}
                   alt=""
+                  className="button__circle"
                 />
+                <div className="text__variant">По алфавиту</div>
               </button>
-              По алфавиту
             </div>
-            <div className="variants__birthday">
+            <div className="variants__birthday variant-solo">
               <button
                 onClick={() => {
                   dispatch(changeFilterModalValue("birthday"));
@@ -67,9 +67,10 @@ const ModalWindow: React.FC = () => {
                 <img
                   src={filterModalValue === "birthday" ? SelectedCircle : Circle}
                   alt=""
+                  className="button__circle"
                 />
+                <div className="text__variant">По дню рождения</div>
               </button>
-              По дню рождения
             </div>
           </div>
         </Box>

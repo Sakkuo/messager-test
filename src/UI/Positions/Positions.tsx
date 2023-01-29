@@ -9,33 +9,55 @@ import { dataAPI } from "../../services/DataService";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { filterSlice } from "../../store/reducers/FilterSlice";
 
-
 const Positions = () => {
-  const {filterParams, filterValue} = useAppSelector( state => state.filterReducer)
+  const { filterParams, filterValue, isOnLineAgain } = useAppSelector(
+    (state) => state.filterReducer
+  );
   const {
     data: workers,
+    error,
+    refetch,
+    isFetching,
     isLoading,
-    error
   } = dataAPI.useFetchAllDataQuery(filterParams);
-  const dispatch = useAppDispatch()
-  const {changeFilter, changeFilteredWorkers, changeFilterValue, changeErrorState} = filterSlice.actions
+  const dispatch = useAppDispatch();
+  const {
+    changeFilter,
+    changeFilteredWorkers,
+    changeFilterValue,
+    changeErrorState,
+    changeIsLoadingState,
+    changeIsFetchingState,
+  } = filterSlice.actions;
 
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     dispatch(changeFilterValue(newValue));
   };
-
   React.useEffect(() => {
     if (workers) {
-      dispatch(changeFilteredWorkers(workers.items))
+      dispatch(changeFilteredWorkers(workers.items));
     }
-  }, [workers])
+  }, [workers]);
+
+  React.useEffect(() => {
+    if (isOnLineAgain) {
+      refetch();
+    }
+  }, [isOnLineAgain]);
 
   React.useEffect(() => {
     if (error) {
-      dispatch(changeErrorState(`${error}`))
-      console.log(error)
+      dispatch(changeErrorState(`${error}`));
     }
-  }, [error])
+  }, [error]);
+
+  React.useEffect(() => {
+    dispatch(changeIsLoadingState(isLoading));
+  }, [isLoading]);
+  
+  React.useEffect(() => {
+    dispatch(changeIsFetchingState(isFetching));
+  }, [isFetching]);
 
   return (
     <div className="Positions">
@@ -49,8 +71,13 @@ const Positions = () => {
                 textColor="inherit"
                 indicatorColor="secondary"
                 aria-label="secondary tabs example"
+                className="Scroll-wrapper"
               >
-                <Tab value="1" label="Все" onClick={() => dispatch(changeFilter("all"))} />
+                <Tab
+                  value="1"
+                  label="Все"
+                  onClick={() => dispatch(changeFilter("all"))}
+                />
                 <Tab
                   value="2"
                   label="Дизайн"
@@ -66,7 +93,11 @@ const Positions = () => {
                   label="Менеджмент"
                   onClick={() => dispatch(changeFilter("management"))}
                 />
-                <Tab value="5" label="iOS" onClick={() => dispatch(changeFilter("ios"))} />
+                <Tab
+                  value="5"
+                  label="iOS"
+                  onClick={() => dispatch(changeFilter("ios"))}
+                />
                 <Tab
                   value="6"
                   label="Android"

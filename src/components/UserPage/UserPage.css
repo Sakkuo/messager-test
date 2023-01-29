@@ -1,3 +1,6 @@
+.UserPage {
+  min-height: 100vh;
+}
 .UserPage__profile {
   background: #F7F7F8;
   height: calc(100vh / 10 * 4);

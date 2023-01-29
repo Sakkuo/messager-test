@@ -5,16 +5,32 @@
   font-size: 24px;
   line-height: 28px;
   margin: 0 0 18px 8px;
-}
-
-.TopBar {
   padding: 16px 16px 0px 16px;
+}
+.TopBar__Search {
+  padding: 0px 16px 0px 16px;
+}
+.TopBar {
+  /* padding: 16px 16px 0px 16px; */
   box-sizing: border-box;
 }
 
+.TopBar__Poisk-Offline {
+  color: white;
+}
 
-@media (max-width: 400px) {
-  .TopBar {
-    width: 90%;
-  }
+.TopBar__offline {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  color: #FFFFFF;
+  padding: 14px 16px 34px 24px;
+}
+
+.TopBar__offlineMain {
+  background: #F44336;
+}
+
+.TopBar__loading {
+  background: #6534FF;
 }

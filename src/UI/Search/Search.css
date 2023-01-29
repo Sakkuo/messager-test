@@ -2,9 +2,13 @@
   background: #F7F7F8;
   border-radius: 16px;
   margin-bottom: 22px;
+  display: flex;
+  overflow: hidden;
 }
 
 .Search__field {
+  display: block;
+  width: 100%;
   border: none;
   background: inherit;
   font-family: 'Inter';
@@ -13,15 +17,15 @@
   font-size: 15px;
   line-height: 20px;
   margin: 10px 12px 10px 44px;
-  width: 95%;
+  max-width: 95%;
+  padding-right: 10px;
 }
 
-@media (max-width: 400px) {
+/* @media (max-width: 400px) {
   .Search__field {
     margin: 10px 6px 10px 40px;
-    width: 80%;
   }
-}
+} */
 
 .Search__field:focus {
   outline: none;

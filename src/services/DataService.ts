@@ -16,6 +16,15 @@ export const dataAPI = createApi({
             }),
             providesTags: (result) => ["Data"],
         }),
+        fetchOneData: build.query<IResults, string>({
+            query: (filterType: string) => ({
+                url: "/users",
+                params: {
+                    __example: filterType,
+                },
+            }),
+            providesTags: (result) => ["Data"],
+        }),
         fetchTestData: build.query<IResults, string[]>({
             query: (paramsData: string[] ) => ({
                 url: `/users`,

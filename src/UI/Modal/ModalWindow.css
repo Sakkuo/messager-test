@@ -3,15 +3,18 @@
   font-size: 20px;
   line-height: 24px;
   text-align: center;
-
-
 }
 
-.Modal__variants>div {
+.text__variant {
+  margin-left: 12px;
+}
+
+.variant-solo {
   padding-top: 35px;
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
+  overflow: hidden;
 }
 
 .Modal__Button {
@@ -20,7 +23,6 @@
   right: 30px;
   background: none;
   border: none;
-
 }
 
 .Modal__Button:hover {
@@ -31,14 +33,18 @@
   background: none;
   border: none;
   padding-right: 14px;
-  vertical-align: middle;
+  width: 100%;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  display: flex;
 }
 
 .circle-select:hover {
   cursor: pointer;
 }
 
-.circle-select > img {
+.button__circle {
   height: 20px;
   width: 20px;
 }

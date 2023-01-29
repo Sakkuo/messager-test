@@ -36,7 +36,7 @@ const Search: React.FC = () => {
       <input
         className="Search__field"
         type="search"
-        placeholder="Введи имя, тег, почту..."
+        placeholder="Введи имя, тег..."
         onChange={(e) => setSearchName(e.target.value)}
       />
       <div className="Search__SearchFilterIcon">

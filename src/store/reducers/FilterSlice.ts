@@ -8,7 +8,10 @@ interface FilterState {
   isModalOpen: boolean,
   filterModalValue: string,
   error: string,
-  searchContent: string
+  searchContent: string,
+  isLoadingPositions: boolean,
+  isOnLineAgain: boolean,
+  isFetchingState: boolean
 }
 
 const initialState: FilterState = {
@@ -18,7 +21,10 @@ const initialState: FilterState = {
   isModalOpen: false,
   filterModalValue: 'alphabet',
   error: '',
-  searchContent: ''
+  searchContent: '',
+  isLoadingPositions: true,
+  isFetchingState: true,
+  isOnLineAgain: false
 }
 
 export const filterSlice = createSlice({
@@ -46,6 +52,13 @@ export const filterSlice = createSlice({
     changeSearchContent(state, action: PayloadAction<string>) {
       state.searchContent = action.payload
     },
+    changeIsLoadingState(state, action: PayloadAction<boolean>) {
+      state.isLoadingPositions = action.payload
+    },
+    changeIsFetchingState(state, action: PayloadAction<boolean>) {
+      state.isFetchingState = action.payload
+    },
+
   }
 })
 
