@@ -10,13 +10,12 @@ import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { filterSlice } from "../../store/reducers/FilterSlice";
 
 const Positions = () => {
-  const { filterParams, filterValue, isOnLineAgain } = useAppSelector(
+  const { filterParams, filterValue } = useAppSelector(
     (state) => state.filterReducer
   );
   const {
     data: workers,
     error,
-    refetch,
     isFetching,
     isLoading,
   } = dataAPI.useFetchAllDataQuery(filterParams);
@@ -39,11 +38,6 @@ const Positions = () => {
     }
   }, [workers]);
 
-  React.useEffect(() => {
-    if (isOnLineAgain) {
-      refetch();
-    }
-  }, [isOnLineAgain]);
 
   React.useEffect(() => {
     if (error) {

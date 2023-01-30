@@ -10,7 +10,7 @@ interface FilterState {
   error: string,
   searchContent: string,
   isLoadingPositions: boolean,
-  isOnLineAgain: boolean,
+
   isFetchingState: boolean
 }
 
@@ -24,7 +24,7 @@ const initialState: FilterState = {
   searchContent: '',
   isLoadingPositions: true,
   isFetchingState: true,
-  isOnLineAgain: false
+
 }
 
 export const filterSlice = createSlice({
